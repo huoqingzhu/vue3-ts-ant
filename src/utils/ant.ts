@@ -1,7 +1,7 @@
 import {
   Input,
   Button,
-  // Menu,
+  Menu,
   Tabs,
   Spin,
   Card,
@@ -14,7 +14,7 @@ import Polices from "@/components/component/Polices.vue"
 const ant = {
   install(Vue: {
     component: (arg0: string, arg1: any) => void;
-    use: (arg0: typeof Tabs) => void;
+    use: (arg0: typeof Tabs|typeof Menu) => void;
   }) {
     Vue.component(Button.name, Button);
     Vue.component(Input.name, Input);
@@ -26,6 +26,7 @@ const ant = {
     Vue.component("Police", Police);
     Vue.component("Polices", Polices);
     Vue.use(Tabs);
+    Vue.use(Menu)
   }
 };
 export default ant;

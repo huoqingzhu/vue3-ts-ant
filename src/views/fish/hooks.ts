@@ -7,10 +7,10 @@ function myRef() {
   // customRef 有两个毁掉函数
   return customRef((track, trigger) => {
     return {
-   async get() {
+  async get() {
         track();
-       const data = await article()
-       console.log(data)
+      const data = await article()
+      console.log(data)
         return data
       },
       set(newValue) {

@@ -4,19 +4,18 @@ import {getData} from "@/api/article"
  * 获取时间
  * @returns date 日期 time 时间
  */
-const time=()=>{
+const time=():{date:string,time:string,timeInterval:number}=>{
 const timeState = reactive({date:"",time:"",timeInterval:1})
 const updateTime=()=> {
  
   timeState.timeInterval = setInterval(() => {
     const data = new Date();
-    const Y = data.getFullYear() + "年";
+    const Y = data.getFullYear() + "--";
     const M =
       (data.getMonth() + 1 < 10 ?
         "0" + (data.getMonth() + 1) :
-        data.getMonth() + 1) + "月";
-
-    const D = data.getDate() + "日";
+        data.getMonth() + 1) + "--";
+    const D = data.getDate() + "--";
     timeState.date = Y + M + D;
     timeState.time =
       data.getHours().toString().padStart(2, "0") +
@@ -32,9 +31,7 @@ onMounted(() => {
 onBeforeUnmount(()=>{
   clearInterval(timeState.timeInterval)
 })
-  return {
-    timeState
-  }
+  return timeState
 }
 /**
  * http轮询
