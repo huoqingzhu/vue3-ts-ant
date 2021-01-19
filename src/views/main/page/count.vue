@@ -1,6 +1,6 @@
 <template >
   <div class="count">
-    <h1>计数器组件</h1>
+    <h1>计数器组件ref</h1>
     <p>父组件传给我的值:{{ count }}</p>
     <a-button @click="add(20)" type="primary">+</a-button>
     <a-button @click="reduce(10)" type="primary">-</a-button>
@@ -17,7 +17,6 @@ export default defineComponent({
   },
   setup(props, context) {
     const count = ref(props.countParent);
-    // 声明一个计数器
     const add = (value: number) => {
       count.value = count.value + value;
     };
