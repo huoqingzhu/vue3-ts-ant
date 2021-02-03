@@ -1,5 +1,6 @@
 import { reactive ,onMounted, onBeforeUnmount,ref,toRef,nextTick} from "vue";
 import {useStore} from "vuex";
+import {useRoute } from "vue-router";
 
 interface Data {
   listData: any;
@@ -18,6 +19,11 @@ const echarts = (): any => {
     listData:{}
 
   })
+  const route = useRoute()
+  console.log(route.query)
+  setTimeout(() =>{
+    console.log(route.params)
+  },1000)
   const store = useStore();
   echartState.listData=store.state.listData
   nextTick(() => {

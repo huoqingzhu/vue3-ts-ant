@@ -3,6 +3,7 @@
 const path = require("path");
 // eslint-disable-next-line no-undef
 const CompressionWebpackPlugin = require("compression-webpack-plugin");
+const BundleAnalyzerPlug = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // eslint-disable-next-line no-undef
 const port = process.env.port || process.env.npm_config_port || 8888;
@@ -75,6 +76,9 @@ module.exports = {
   chainWebpack(config) {
     config.plugins.delete("preload"); // TODO: need test
     config.plugins.delete("prefetch"); // TODO: need test
+    config
+      .plugin('webpack-bundle-analyzer')
+      .use(new BundleAnalyzerPlug({ analyzerPort: 9002 }))
     config.plugin('html')
       .tap(args => {
         args[0].title = "vue3+TS";

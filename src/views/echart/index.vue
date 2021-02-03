@@ -1,37 +1,27 @@
 <template>
-<div>
-  <h1>{{ listData }}</h1>
-  <chart ref="charts" :option="option" :style="sty"></chart>
-</div>
+  <div>
+    <h1>{{ $route.path }}{{ $route.params }}</h1>
+    <chart ref="charts" :option="option" :style="sty"></chart>
+  </div>
 </template>
 
 <script lang="ts">
 import chart from "@/components/echart/ecahrt.vue";
 
-import {
-  defineComponent,
-  onMounted,
-  ref,
-  nextTick,
-  toRefs
-} from "vue";
-import {
-  echarts
-} from "./fishHooks";
+import { defineComponent, toRefs } from "vue";
+import { echarts } from "./fishHooks";
 
 export default defineComponent({
   components: {
-    chart
+    chart,
   },
 
   setup(a, b) {
-    const {
-      echartState
-    } = echarts();
+    const { echartState } = echarts();
     return {
-      ...toRefs(echartState)
+      ...toRefs(echartState),
     };
-  }
+  },
 });
 </script>
 

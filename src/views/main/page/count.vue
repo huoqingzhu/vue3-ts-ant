@@ -8,6 +8,8 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import axios from "axios";
+
 export default defineComponent({
   props: {
     countParent: {
@@ -20,6 +22,17 @@ export default defineComponent({
     const add = (value: number) => {
       count.value = count.value + value;
     };
+    console.log(window.location.origin + ":8085" + "/name");
+    axios({
+      method: "get",
+      url: window.location.origin + ":8085" + "/name",
+    })
+      .then((res: any) => {
+        console.log("请求成功");
+      })
+      .catch((err) => {
+        console.log("请求失败");
+      });
     const reduce = (value: number) => {
       count.value = count.value - value;
     };

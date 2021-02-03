@@ -13,8 +13,7 @@
 <script lang="ts">
 import Header from "../components/head/Header2.vue";
 
-import { defineComponent, reactive, toRefs } from "vue";
-import { setup } from "vue-class-component";
+import { defineComponent } from "vue";
 export default defineComponent({
   components: {
     Header,

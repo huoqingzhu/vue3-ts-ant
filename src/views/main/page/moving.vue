@@ -1,22 +1,12 @@
 <template>
   <div class="moving">
-    <!-- <img src="./img/lan.gif" class="imgs" ref="box1" alt="" /> -->
-
     <img src="./img/lan.gif" class="img1" alt="" />
     <img src="./img/lan.gif" class="img2" />
     <img src="./img/lan.gif" class="img3" alt="" />
     <img src="./img/lan.gif" class="img4" alt="" />
-    <img src="./img/hong.gif" class="img5" alt="" />
+    <img src="./img/lan.gif" class="img5" alt="" />
     <img src="./img/lan.gif" class="img6" alt="" />
     <img src="./img/lan.gif" class="img7" alt="" />
-    <!-- <template v-for="item in listData" :key="item.num">
-      <img
-        src="./img/lan.gif"
-        alt=""
-        :style="item.style"
-        :ref="`box${item.num}`"
-      />
-    </template> -->
   </div>
 </template>
 <script lang="ts">
@@ -63,14 +53,15 @@ export default defineComponent({
 .moving {
   width: 100%;
   height: 200px;
+  // margin-top: -100px;
   position: relative;
-  background-color: rgb(16, 109, 172);
-  // background-color: #ccc;
+  // background-color: pink;
+  background-color: rgb(35, 185, 85);
 }
 
 .img1 {
-  width: 90px;
-  height: 90px;
+  width: 110px;
+  height: 110px;
   position: absolute;
   animation-name: move1;
   animation-duration: 2s;
@@ -78,13 +69,14 @@ export default defineComponent({
   animation-iteration-count: infinite;
 }
 .img2 {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   position: absolute;
-  margin-left: 90px;
+  margin-left: 110px;
+  // margin-top: 20px;
+
   animation-name: move2;
   animation-duration: 2s;
-  // animation-direction: reverse;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
@@ -92,38 +84,42 @@ export default defineComponent({
   width: 110px;
   height: 110px;
   position: absolute;
-  margin-left: 190px;
+  margin-left: 220px;
+  // margin-top: 40px;
   animation-name: move2;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 .img4 {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   position: absolute;
-  margin-left: 300px;
+  margin-left: 330px;
+  // margin-top: 60px;
   animation-name: move2;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 .img5 {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   position: absolute;
-  margin-left: 420px;
-  animation-name: move2;
+  margin-left: 440px;
+  // margin-top: 40px;
+  animation-name: move5;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 .img6 {
-  width: 120px;
-  height: 120px;
+  width: 110px;
+  height: 110px;
   position: absolute;
   margin-left: 550px;
-  animation-name: move2;
+  // margin-top: 20px;
+  animation-name: move6;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -132,31 +128,81 @@ export default defineComponent({
   width: 110px;
   height: 110px;
   position: absolute;
-  margin-left: 670px;
-  animation-name: move2;
+  margin-left: 660px;
+  // margin-top: 0px;
+  animation-name: move7;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 @keyframes move1 {
   0% {
-    top: 0;
+    top: 0px;
     left: 0px;
   }
   100% {
-    top: 0;
+    top: 0px;
     left: 660px;
   }
 }
 @keyframes move2 {
   0% {
-    top: 0;
+    top: 0px;
     left: 0px;
   }
   100% {
-    top: 0;
+    // top: -20px;
+    left: -110px;
+  }
+}
+@keyframes move3 {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    top: 10px;
+    left: -110px;
+  }
+}
+@keyframes move4 {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    // top: 10px;
+    left: -110px;
+  }
+}
+@keyframes move5 {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    // margin-top: 60px;
+    left: -110px;
+  }
+}
+@keyframes move6 {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    // margin-top: 40px;
+    left: -110px;
+  }
+}
+@keyframes move7 {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  100% {
+    // margin-top: 20px;
     left: -110px;
   }
 }
 </style>
-

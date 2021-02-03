@@ -67,7 +67,6 @@ export default defineComponent({
       title: "海水养殖系统",
     };
   },
-
   setup() {
     const store = useStore();
     // 获取时间
